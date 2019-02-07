@@ -1,0 +1,35 @@
+    // --- Directions
+		// Given an array and chunk size, divide the array into many subarrays
+		// where each subarray is of length size
+		// --- Examples
+		// chunk([1, 2, 3, 4], 2) --> [[ 1, 2], [3, 4]]
+		// chunk([1, 2, 3, 4, 5], 2) --> [[ 1, 2], [3, 4], [5]]
+		// chunk([1, 2, 3, 4, 5, 6, 7, 8], 3) --> [[ 1, 2, 3], [4, 5, 6], [7, 8]]
+		// chunk([1, 2, 3, 4, 5], 4) --> [[ 1, 2, 3, 4], [5]]
+		// chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]] NOTA: si el tamaño(size) es mayor a la logitud del array solo imprime un solo array --> [ 1, 2, 3, 4, 5]
+
+		//Funcion crea subarray
+		function chunk(array, size) {
+			// inicializacion de variables
+		  result=[];//array resultante
+		  item=[];//array temporal
+		  lg=array.length;//longitud de array
+		  cont=1;//contador inicializado en uno
+
+		  // inicio ciclo for para recorrer arreglo
+		  for(i=0;i<lg;i++){
+		    item.push(array[i]);//asignar valor a arrar temporal
+		    if(cont==size){// si el contador llega es igial a size 
+		      result.push(item);//se agrega el array temporal a el array resultante
+		      item=[];//se vacia el array
+		      cont=1;//se inicializa el contador en uno
+		    }else{//si el contador no es igual a size
+		      cont++;//se aumenta en uno el contador
+		    }
+		  }
+		  // fin ciclo for
+		  if (lg%size!=0) {//si el modulo de lg/size no es igua a 0 entonces
+		  	result.push(item);//se agrega el ultimo array 
+		  }
+		  console.log(result)
+		}
