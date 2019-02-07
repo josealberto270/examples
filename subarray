@@ -31,5 +31,5 @@
 		  if (lg%size!=0) {//si el modulo de lg/size no es igua a 0 entonces
 		  	result.push(item);//se agrega el ultimo array 
 		  }
-		  console.log(result)
+		  console.log(result)//muestra en cosola el array resultante
 		}
